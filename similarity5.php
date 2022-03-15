@@ -2,7 +2,7 @@
     <header>
         <title>DocTest</title>
         <body>
-            <p> my name is doctest. Here's your document</p>
+            <p> This is doctest. Its working!</p>
 <?php
 
 //creating function to read the docx file. Compatible with php 8 - please note that readDocx is the function name 
@@ -30,6 +30,32 @@ $filename = "student.docx";
 
  if($content !== false) {        print_r(nl2br($content));    }    
 else {        echo 'Couldn\'t the file. Please check that file.';    }
+
+//put text from first document into array 
+$arraytext = explode(" ", $content);
+
+echo $arraytext[0]; //this should display the first string of text from the document 
+echo $arraytext[1]; //this should display the second string of text from the document 
+
+
+
+//loading document 2 
+
+$filename = "student2.docx";
+
+$content = readDocx($filename);
+
+if($content !== false) {        print_r(nl2br($content));    }    
+else {        echo 'Couldn\'t the file. Please check that file.';    }
+//put text from second document into array 
+$arraytext2 = explode(" ", $content);
+
+echo $arraytext2[0]; //this should display the first string of text from the second document 
+echo $arraytext2[1]; //this should display the second string of text from the second document 
+
+//compare arrays 
+similar_text("$arraytext","$arraytext2", $percent); 
+echo "$percent"; 
 
     ?>
     </body>
