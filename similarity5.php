@@ -54,8 +54,18 @@ echo $arraytext2[0]; //this should display the first string of text from the sec
 echo $arraytext2[1]; //this should display the second string of text from the second document 
 
 //compare arrays 
-similar_text("$arraytext","$arraytext2", $percent); 
-echo "$percent"; 
+$result = array_intersect($arraytext, $arraytext2);
+
+//print_r($result);
+// compute percentage similarity of array 2 to array 1 
+$count1 = round(count($result)); 
+
+$count2 = count($arraytext);
+
+$similarity = $count1/$count2*100;
+
+echo 'The documents are:'.$similarity.'%'.'similar';
+
 
     ?>
     </body>
