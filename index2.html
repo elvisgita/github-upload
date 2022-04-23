@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title></title>
+<body>
+<form enctype="multipart/form-data" action="upload.php" method="GET">
+    <!-- MAX_FILE_SIZE must precede the file input field -->
+    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+    <!-- Name of input element determines name in $_FILES array -->
+    Select file 1: <input name="userfile" type="file" />
+    <br>
+    
+    <br>
+    <input type="submit" value="Send File" />
+</form>
+</body>

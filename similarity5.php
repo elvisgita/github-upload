@@ -41,7 +41,7 @@ echo $arraytext[1]; //this should display the second string of text from the doc
 
 //loading document 2 
 
-$filename = "student2.docx";
+$filename = "test1.docx";
 
 $content = readDocx($filename);
 
